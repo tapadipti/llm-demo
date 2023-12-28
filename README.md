@@ -32,6 +32,12 @@ Then set your OpenAI API key (if you don't have one, get one [here](https://beta
 ```
 The preceeding spaces prevent the API key from staying in your bash history if that is [configured](https://stackoverflow.com/questions/6475524/how-do-i-prevent-commands-from-showing-up-in-bash-history).
 
+Then install and run ollama (refer https://github.com/jmorganca/ollama and https://ollama.ai/download/linux):
+```shell
+  curl https://ollama.ai/install.sh | sh
+  ollama run llama2
+```
+
 # Running
 
 Now you should be ready to re-run the training pipeline. Assuming you have not changed anything, nothing should need to run. Everything can be re-used for the DVC pull:
