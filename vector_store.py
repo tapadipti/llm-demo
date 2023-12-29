@@ -18,6 +18,7 @@ with open("metadatas.json", "r") as f:
 print(f"Processing {len(docs)} documents.")
 
 emb = OllamaEmbeddings()
+emb.show_progress = True
 
 # Here we create a vector store from the documents and save it to disk.
 store = FAISS.from_texts(docs, emb, metadatas=metadatas)
