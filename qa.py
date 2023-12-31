@@ -21,7 +21,7 @@ with open("faiss_store.pkl", "rb") as f:
     store = pickle.load(f)
 
 df = pd.read_csv("canfy.csv")
-sample_questions = df["Q"].to_list()
+sample_questions = df["Q"].to_list()[0:2]
 
 store.index = index
 llm = Ollama(model="llama2")

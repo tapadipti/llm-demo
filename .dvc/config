@@ -1,5 +1,5 @@
 [core]
-    remote = google
+    remote = tapa-remote
 ['remote "local_mac_remote"']
     url = /tmp/dvcstore
 ['remote "s3remote"']
@@ -8,3 +8,5 @@
     url = https://remote.dvc.org/llm-demo
 ['remote "google"']
     url = gs://llm-demo-remote/remote
+['remote "tapa-remote"']
+    url = gs://llm-demo-remote/tapa-remote
