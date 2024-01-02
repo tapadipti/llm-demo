@@ -20,7 +20,7 @@ index = faiss.read_index("docs.index")
 with open("faiss_store.pkl", "rb") as f:
     store = pickle.load(f)
 
-df = pd.read_csv("canfy.csv")
+df = pd.read_csv("progit_questions.csv")
 sample_questions = df["Q"].to_list()[0:2]
 
 store.index = index
