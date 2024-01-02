@@ -23,7 +23,7 @@ Respond with a number on the scale of 0 to 4.
 
 llm = OpenAI()
 
-truth = pd.read_csv("canfy.csv")
+truth = pd.read_csv("progit_questions.csv")
 predictions = pd.read_csv("results.csv")
 
 records = []
