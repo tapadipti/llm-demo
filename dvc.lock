@@ -27,8 +27,8 @@ stages:
       nfiles: 262
     - path: ingest.py
       hash: md5
-      md5: 58003d8f97a268e3c622897f18d8fc6b
-      size: 4691
+      md5: d0f292bc230c286ee2930728e2a046e7
+      size: 657
     params:
       params.yaml:
         TextSplitter:
@@ -39,27 +39,27 @@ stages:
     outs:
     - path: docs.json
       hash: md5
-      md5: f8778bd147329933c01eabe8b3253492
-      size: 73471050
+      md5: 56dc37bab9c16deac65ff3a836be05c1
+      size: 806099
     - path: metadatas.json
       hash: md5
-      md5: abcec91e4955e3519298bb815ce0dc7a
-      size: 3975161
+      md5: 0c50c613202d5bfedfcfccfe52abfc4e
+      size: 10985
   vectorize:
     cmd: python vector_store.py
     deps:
     - path: docs.json
       hash: md5
-      md5: f8778bd147329933c01eabe8b3253492
-      size: 73471050
+      md5: 56dc37bab9c16deac65ff3a836be05c1
+      size: 806099
     - path: metadatas.json
       hash: md5
-      md5: abcec91e4955e3519298bb815ce0dc7a
-      size: 3975161
+      md5: 0c50c613202d5bfedfcfccfe52abfc4e
+      size: 10985
     - path: vector_store.py
       hash: md5
-      md5: d4e007a13bc570fd4aa6c9a4f8440bd4
-      size: 980
+      md5: 1d50ba5d19938e49fa5d7e2b4a9ed649
+      size: 982
     params:
       params.yaml:
         OpenAIEmbeddings:
@@ -70,12 +70,12 @@ stages:
     outs:
     - path: docs.index
       hash: md5
-      md5: f0a525b272bb59659308258ad3abc2a3
-      size: 16384045
+      md5: 00d04d3463b7e4d39040fa1b7fe642c7
+      size: 7258157
     - path: faiss_store.pkl
       hash: md5
-      md5: 9060075d072d3a6142eeaacc00b4640b
-      size: 1508447
+      md5: c3da5d5b725963b639f34ac816ae9eb4
+      size: 833170
   run:
     cmd: python qa.py
     deps:
@@ -85,16 +85,16 @@ stages:
       size: 6467
     - path: docs.index
       hash: md5
-      md5: f0a525b272bb59659308258ad3abc2a3
-      size: 16384045
+      md5: 00d04d3463b7e4d39040fa1b7fe642c7
+      size: 7258157
     - path: faiss_store.pkl
       hash: md5
-      md5: 9060075d072d3a6142eeaacc00b4640b
-      size: 1508447
+      md5: c3da5d5b725963b639f34ac816ae9eb4
+      size: 833170
     - path: qa.py
       hash: md5
-      md5: 24e403d82af692ef88fb5507aca218f2
-      size: 1446
+      md5: 4f1b8f2ffb564c3ce9754f2068d6fdef
+      size: 1452
     params:
       params.yaml:
         ChatOpenAI:
@@ -109,8 +109,8 @@ stages:
     outs:
     - path: results.csv
       hash: md5
-      md5: 842e3e86e0438f502358957c214e8c23
-      size: 3114
+      md5: abc3984ca29f773365bba04570133081
+      size: 4601
   setup:
     cmd: bash setup.sh
     deps:
@@ -131,14 +131,14 @@ stages:
       size: 6467
     - path: eval.py
       hash: md5
-      md5: 9c2afc3fc90c9f2d71e1698a655b727f
-      size: 1193
+      md5: 0245cd5e0416c0384486fdafc9d84540
+      size: 1204
     - path: results.csv
       hash: md5
-      md5: 842e3e86e0438f502358957c214e8c23
-      size: 3114
+      md5: abc3984ca29f773365bba04570133081
+      size: 4601
     outs:
     - path: eval.csv
       hash: md5
-      md5: 3f14c09d409fb458f45e4be6fb8140f5
-      size: 140
+      md5: 59a1528dc10d73afed3bde3ab2016241
+      size: 391
